@@ -19,7 +19,7 @@ module.exports = (app) => { //app is a place holder
             maxAge: 60000 // 60 * 1000 ms === 1 min  BANK is usually 10 mins 
     },
     store: MongoStore.create({
-        mongoUrl: process.env.MONGODB_URI || 'mongodb://localhost/project2'
+        mongoUrl: process.env.MONGODB_URI || 'mongodb://0.0.0.0:27017/project2'
  
         // ttl => time to live
         // ttl: 60 * 60 * 24 // 60sec * 60min * 24h => 1 day
