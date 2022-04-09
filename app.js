@@ -28,7 +28,7 @@ app.use(globalUserObject)
 const capitalized = require("./utils/capitalized")
 const projectName = "project2"
 
-app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`
+app.locals.appTitle = `${capitalized(projectName)} Tax Preparation Services`
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes")
