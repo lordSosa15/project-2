@@ -1,11 +1,17 @@
 {{#if userInSession}}
-  <h3>Welcome, {{userInSession.username}}</h3>
+  <h3>Welcome, {{userInSession.firstName}}</h3>
 
   {{! <button> <a href="/auth/profile"> Reload! </a></button> }}
 
   <button>
     <a href="/personal-info/{{userInSession._id}}">
       Personal Info
+    </a>
+  </button>
+
+  <button>
+    <a href="/new-form">
+      New Form
     </a>
   </button>
 
