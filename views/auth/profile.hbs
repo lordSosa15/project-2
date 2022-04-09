@@ -1,7 +1,13 @@
 {{#if userInSession}}
   <h3>Welcome, {{userInSession.username}}</h3>
 
-  {{! <button> <a href="/auth/profile"></a></button> }}
+  {{! <button> <a href="/auth/profile"> Reload! </a></button> }}
+
+  <button>
+    <a href="/personal-info/{{userInSession._id}}">
+      Personal Info
+    </a>
+  </button>
 
 {{else}}
 

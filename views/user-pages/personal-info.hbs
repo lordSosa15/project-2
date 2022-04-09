@@ -1,0 +1,17 @@
+<h2> Personal Information </h2>
+
+<form action="/personal-info/{{userInfo._id}}" method="POST">
+  <label>
+    First Name:
+    <input type="text" name="firstName" value="{{userInfo.firstName}}" />
+  </label>
+  <br />
+  <label>
+    Last Name:
+    <input type="text" name="firstName" value="{{userInfo.lastName}}" />
+  </label>
+  <br />
+  <button>
+    Save
+  </button>
+</form>
