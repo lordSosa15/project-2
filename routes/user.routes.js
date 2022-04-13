@@ -5,7 +5,15 @@ const { isLoggedIn, isLoggedOut } = require("../config/route-guard.config")
 
 // all routes here
 
-router.post("/personal-info/:id", isLoggedIn, (req, res, next) => {
+router.get("/personal-info/:id", isLoggedIn, (req, res, next) => {
+  User.findById(req.params.id)
+    .then((userInfo) => {
+      res.render("user-pages/personal-info", { userInfo })
+    })
+    .catch((err) => console.log(err))
+})
+
+router.post("/personal-info/:id", (req, res, next) => {
   const { firstName, lastName, birthday } = req.body
 
   User.findByIdAndUpdate(
@@ -13,14 +21,10 @@ router.post("/personal-info/:id", isLoggedIn, (req, res, next) => {
     { firstName, lastName, birthday },
     { new: true }
   )
-    .then((updatedInfo) => res.redirect(`/auth/profile`))
-    .catch((err) => console.log(err))
-})
+    .then((updatedInfo) => {
+      req.session.currentUser = updatedInfo
 
-router.get("/personal-info/:id", isLoggedIn, (req, res, next) => {
-  User.findById(req.params.id)
-    .then((userInfo) => {
-      res.render("user-pages/personal-info", { userInfo })
+      res.redirect("/auth/profile")
     })
     .catch((err) => console.log(err))
 })

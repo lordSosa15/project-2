@@ -124,8 +124,9 @@ router.post("/process-login", (req, res, next) => {
 // POST ROUTE TO LOGOUT USER
 
 router.post("/logout", (req, res, next) => {
+  console.log(req.session.currentUser)
   req.session.destroy((err) => {
-    console.log(`Err while logout`)
+    console.log(`Err while logout: `, err)
     if (err) next(err)
     res.redirect("/")
   })
