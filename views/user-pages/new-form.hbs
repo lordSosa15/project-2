@@ -1,6 +1,237 @@
-<iframe
+{{! <script
+  src="https://www.cognitoforms.com/f/seamless.js"
+  data-key="kjwX2zN2_Umd5XjTqy-M4Q"
+  data-form="1"
+></script> }}
+
+{{!-- <iframe
   src="https://www.cognitoforms.com/f/kjwX2zN2_Umd5XjTqy-M4Q/1"
   style="border:0;width:100%;"
-  height="1360"
+  height="1368"
 ></iframe>
-<script src="https://www.cognitoforms.com/f/iframe.js"></script>
+<script src="https://www.cognitoforms.com/f/iframe.js"></script> --}}
+
+
+
+{{!-- if referred, type his/her name --}}
+{{!--  Were you previously issued an Identity Protection PIN (IP PIN) by the IRS--}}
+
+{{!-- Are you a US citizen?  y/n --}}
+
+{{!-- Taxpayer Filing Status 
+single
+married filling jointly
+married filling separately
+head of household
+qualifying widow
+--}}
+
+{{!-- Can another taxpayer claim you as a dependent on their tax return? --}}
+
+{{!-- What year(s) are you filing? last 3 (2019, 2020, 2021) --}}
+
+{{!--  firstName required--}}
+{{!--  lastName required--}}
+{{!-- occupation --}}
+{{!-- are you trying to buy a new home within the next 2 yrs --}}
+{{!-- are you interested in credit repair --}}
+{{!-- Will you be filing a tax return with your spouse?* --}}
+
+{{!--  spouseName required if married check --}}
+{{!--  spouseLastName required --}}
+
+{{!-- TaxpayerSSN required --}}
+{{!-- DOB --}}
+{{!-- DL # , state, iss date, exp date--}}
+{{!-- phone # --}}
+
+{{!-- spouseSSN  --}}
+{{!-- DOB --}}
+{{!-- DL # , state, iss date, exp date--}}
+{{!-- phone # --}}
+
+
+{{!-- full address --}}
+
+{{!-- income check all that apply 
+W2
+W2G
+1099R
+1099DIV
+1099 INT
+1099G
+1099MISC
+1099NEC
+1099SSA
+ --}}
+
+ {{!-- DEPENDENTS if applicable --}}
+ {{!-- firstName, lastName, SSN, DOB, relationship(dropDown)- daughter, son, niece,nephew 
+ disabled check box --}}
+
+ {{!-- did you have marketplace health insurance, if yes upload 1095-A --}}
+
+ {{!-- if you or dependent attended school upload 1098-T --}}
+
+{{!-- upload ID --}}
+{{!-- upload income documents --}}
+
+{{!-- are you interested in audit protection --}}
+
+{{!-- bank account and routing number you want refund deposited --}}
+
+ {{!-- itemized deductions --}}
+
+
+<form action="/tax-info/{{userInfo._id}}" method="post">
+  <label for="referral">
+      if referred, type his/her name
+    <input type="text" name="referralFirstName">   
+  </label>
+  <br>
+  <div class="form-check form-check-inline">
+  <label for="id-pin"class="form-check-label"for="yes_no_radio">Were you previously issued an Identity Protection PIN (IP PIN) by the IRS?</label>
+  <br>
+<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
+<br>
+<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+</div>
+  <br>
+  <div class="form-check form-check-inline">
+  <label for="citizenship" class="form-check-label"for="yes_no_radio">Are you a US citizen?</label>
+  <br>
+<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
+<br>
+<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+</div>
+  <br>
+
+
+<div class="dropdown">
+
+   Taxpayer Filling Status
+  <select class="btn btn-secondary dropdown-toggle">
+ <ul class="dropdown-menu">
+   <li><option class="dropdown-item">Single</option></li>
+  <li><option class="dropdown-item">Married Filling Jointly</option></li>
+  <li><option class="dropdown-item active" >Married Filling Separately</option></li>
+  <li><option class="dropdown-item">Qualifying Widow</option></li>
+  <li><option class="dropdown-item">Head of Household</option></li>
+</ul></select>
+</div>
+
+
+
+
+  <div class="form-check form-check-inline">
+  <label for="citizenship" class="form-check-label"for="yes_no_radio">Can another taxpayer claim you as a dependent on their tax return?</label>
+  <br>
+<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
+<br>
+<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+</div>
+ <label for="">
+occupation
+    <input type="text">   
+  </label>
+  <br>
+   <div class="form-check form-check-inline">
+<label for="citizenship" class="form-check-label"for="yes_no_radio">are you trying to buy a new home within the next 2 yrs </label>
+  <br>
+<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
+<br>
+<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+</div>
+  <br>
+
+
+    <div class="form-check form-check-inline">
+<label for="citizenship" class="form-check-label"for="yes_no_radio">are you interested in credit repair? </label>
+  <br>
+<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
+<br>
+<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+</div>
+  <br>
+  <label for="">
+Will you be filing a tax return with your spouse?
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+TaxpayerSSN 
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+Driver license 
+    <input type="text">   
+  </label>
+  <br>
+  <label for="address">
+<Address></Address>
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+income check all that apply 
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+DEPENDENTS if applicable
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+did you have marketplace health insurance, if yes upload 1095-A 
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+if you or dependent attended school upload 1098-T 
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+    upload
+    <input type="text">   
+  </label>
+  <br>
+<label for="">
+upload 2
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+   
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+    
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+    
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+are you interested in audit protection?
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+bank account and routing for deposit
+    <input type="text">   
+  </label>
+  <br>
+  <label for="">
+itemized deductions
+    <input type="text">   
+  </label>
+  <br>
+</form>
+
