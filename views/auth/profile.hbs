@@ -1,7 +1,28 @@
 {{#if userInSession}}
-  <h3>Welcome, {{userInSession.firstName}}</h3>
+  <h3>Welcome {{userInSession.userType}}, {{userInSession.firstName}}</h3>
 
   {{! <button> <a href="/auth/profile"> Reload! </a></button> }}
+
+  {{#if_eq userInSession.userType "admin"}}
+
+    <button>
+      <a href="/personal-info/{{userInSession._id}}">
+        Personal Info
+      </a>
+    </button>
+
+    <button>
+      <a href="/roles">
+        Manage and assign roles
+      </a>
+    </button>
+
+    <button>
+      <a href="/users-list">
+        List of Users
+      </a>
+    </button>
+  {{/if_eq}}
 
   {{#if_eq userInSession.userType "preparer"}}
     <button>
@@ -15,6 +36,7 @@
         List of Users
       </a>
     </button>
+
   {{else}}
     <button>
       <a href="/personal-info/{{userInSession._id}}">

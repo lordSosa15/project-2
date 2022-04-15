@@ -36,12 +36,7 @@ const userSchema = new Schema(
       format: Date,
     },
     address: {
-      type: Object,
-      properties: {
-        street_address: String,
-        city: String,
-        state: String,
-      },
+      type: String,
     },
   },
   {
