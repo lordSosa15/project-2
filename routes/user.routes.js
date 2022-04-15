@@ -14,11 +14,11 @@ router.get("/personal-info/:id", isLoggedIn, (req, res, next) => {
 })
 
 router.post("/personal-info/:id", (req, res, next) => {
-  const { firstName, lastName, birthday } = req.body
+  const { firstName, lastName, birthday, address } = req.body
 
   User.findByIdAndUpdate(
     req.params.id,
-    { firstName, lastName, birthday },
+    { firstName, lastName, birthday, address },
     { new: true }
   )
     .then((updatedInfo) => {

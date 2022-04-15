@@ -3,17 +3,31 @@
 
   {{! <button> <a href="/auth/profile"> Reload! </a></button> }}
 
-  <button>
-    <a href="/personal-info/{{userInSession._id}}">
-      Personal Info
-    </a>
-  </button>
+  {{#if_eq userInSession.userType "preparer"}}
+    <button>
+      <a href="/personal-info/{{userInSession._id}}">
+        Personal Info
+      </a>
+    </button>
 
-  <button>
-    <a href="/new-form">
-      New Form
-    </a>
-  </button>
+    <button>
+      <a href="/users-list">
+        List of Users
+      </a>
+    </button>
+  {{else}}
+    <button>
+      <a href="/personal-info/{{userInSession._id}}">
+        Personal Info
+      </a>
+    </button>
+
+    <button>
+      <a href="/new-form">
+        New Form
+      </a>
+    </button>
+  {{/if_eq}}
 
 {{else}}
 

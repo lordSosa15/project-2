@@ -2,6 +2,11 @@ const { Schema, model } = require("mongoose")
 
 const userSchema = new Schema(
   {
+    userType: {
+      type: String,
+      enum: ["user", "preparer", "admin"],
+      default: "user",
+    },
     username: {
       type: String,
       unique: true,
@@ -36,7 +41,6 @@ const userSchema = new Schema(
         street_address: String,
         city: String,
         state: String,
-        country: String,
       },
     },
   },
