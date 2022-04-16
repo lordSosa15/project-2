@@ -19,7 +19,29 @@ const isLoggedOut = (req, res, next) => {
   next()
 }
 
+//what user can do if they are an admin
+
+const isAdmin = (req, res, next) => {
+  if (req.session.currentUser.userType !== "admin") {
+    return res.redirect("/auth/profile")
+  }
+  next()
+}
+
+//what user can do if they are a preparer
+
+const isPreparer = (req, res, next) => {
+  if (req.session.currentUser.userType !== "admin") {
+    if (req.session.currentUser.userType !== "preparer") {
+      return res.redirect("/auth/profile")
+    }
+  }
+  next()
+}
+
 module.exports = {
   isLoggedIn,
   isLoggedOut,
+  isAdmin,
+  isPreparer,
 }
