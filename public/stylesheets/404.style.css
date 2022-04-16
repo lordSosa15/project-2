@@ -215,6 +215,7 @@ body {
 }
 .box .box__description .box__description-container .box__description-title {
   font-size: 24px;
+  font-weight: bold;
   letter-spacing: 0.5px;
 }
 .box .box__description .box__description-container .box__description-text {

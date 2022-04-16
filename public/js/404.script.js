@@ -1,5 +1,7 @@
 //based on https://dribbble.com/shots/3913847-404-page
 
+console.log("It worked!")
+
 var pageX = $(document).width()
 var pageY = $(document).height()
 var mouseY = 0
