@@ -84,154 +84,325 @@ W2G
 
 
 <form action="/tax-info/{{userInfo._id}}" method="post">
-  <label for="referral">
-      if referred, type his/her name
-    <input type="text" name="referralFirstName">   
-  </label>
-  <br>
-  <div class="form-check form-check-inline">
-  <label for="id-pin"class="form-check-label"for="yes_no_radio">Were you previously issued an Identity Protection PIN (IP PIN) by the IRS?</label>
-  <br>
-<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
-<br>
-<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+  
+<form method="post">
+<div class="row">
+	<label for="referral">IF referred, type name here</label>
+	<input name="referralName" type="text" />
 </div>
-  <br>
-  <div class="form-check form-check-inline">
-  <label for="citizenship" class="form-check-label"for="yes_no_radio">Are you a US citizen?</label>
-  <br>
-<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
-<br>
-<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Were you previously issued an Identity Protection PIN (IP PIN) by the IRS</legend>
+		<span><input value="Yes" id="WereyoupreviouslyissuedanIdentityProtectionPINIPPINbytheIRS_13" name="WereyoupreviouslyissuedanIdentityProtectionPINIPPINbytheIRS" type="radio" class="required" title="Yes. This is a required field" /> <label for="WereyoupreviouslyissuedanIdentityProtectionPINIPPINbytheIRS_13">Yes</label></span>
+ 		<span><input value="No" name="WereyoupreviouslyissuedanIdentityProtectionPINIPPINbytheIRS" type="radio" class="required" title="No. This is a required field" /> <label for="WereyoupreviouslyissuedanIdentityProtectionPINIPPINbytheIRS_14">No</label></span>
+ 	</fieldset>
 </div>
-  <br>
-
-
-<div class="dropdown">
-
-   Taxpayer Filling Status
-  <select class="btn btn-secondary dropdown-toggle">
- <ul class="dropdown-menu">
-   <li><option class="dropdown-item">Single</option></li>
-  <li><option class="dropdown-item">Married Filling Jointly</option></li>
-  <li><option class="dropdown-item active" >Married Filling Separately</option></li>
-  <li><option class="dropdown-item">Qualifying Widow</option></li>
-  <li><option class="dropdown-item">Head of Household</option></li>
-</ul></select>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Are you a US citizen? </legend>
+		<span><input value="Yes" name="AreyouaUScitizen?" type="radio" class="required" /> <label>Yes</label></span>
+ 		<span><input value="No"  name="AreyouaUScitizen?" type="radio" class="required" /> <label>No</label></span>
+ 	</fieldset>
 </div>
-
-
-
-
-  <div class="form-check form-check-inline">
-  <label for="citizenship" class="form-check-label"for="yes_no_radio">Can another taxpayer claim you as a dependent on their tax return?</label>
-  <br>
-<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
-<br>
-<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+<div class="row requiredRow">
+	<legend for="TaxpayerFilingStatus">Taxpayer Filing Status </legend>
+	<select name="TaxpayerFilingStatus" class="btn btn-info dropdown-toggle" title="Taxpayer Filing Status">
+		<option value="single">single</option>
+		<option value="married filling jointly">married filling jointly</option>
+		<option value="married filling separately">married filling separately</option>
+		<option value="head of household">head of household</option>
+		<option value="qualifying widow">qualifying widow</option>
+	</select>
 </div>
- <label for="">
-occupation
-    <input type="text">   
-  </label>
-  <br>
-   <div class="form-check form-check-inline">
-<label for="citizenship" class="form-check-label"for="yes_no_radio">are you trying to buy a new home within the next 2 yrs </label>
-  <br>
-<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
-<br>
-<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Can another taxpayer claim you as a dependent on their tax return?</legend>
+		<span><input value="Yes" name="dependent?" type="radio" class="required" title="Yes. This is a required field" /> <label>Yes</label></span>
+ 		<span><input value="No"  name="dependent?" type="radio" class="required" title="No. This is a required field" /> <label>No</label></span>
+ 	</fieldset>
 </div>
-  <br>
-
-
-    <div class="form-check form-check-inline">
-<label for="citizenship" class="form-check-label"for="yes_no_radio">are you interested in credit repair? </label>
-  <br>
-<input class="form-check-input" type="checkbox" name="yes_no" >Yes</input>
-<br>
-<input class="form-check-input" type="checkbox" name="yes_no"> No</input>
+<div class="row requiredRow">
+	<legend>What year(s) are you filing?</legend>
+	<select class="btn btn-info dropdown-toggle" title="filing year">
+		<option value="2019">2019</option>
+		<option value="2020">2020</option>
+		<option value="2021">2021</option>
+	</select>
 </div>
-  <br>
-  <label for="">
-Will you be filing a tax return with your spouse?
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-TaxpayerSSN 
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-Driver license 
-    <input type="text">   
-  </label>
-  <br>
-  <label for="address">
-<Address></Address>
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-income check all that apply 
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-DEPENDENTS if applicable
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-did you have marketplace health insurance, if yes upload 1095-A 
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-if you or dependent attended school upload 1098-T 
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-    upload
-    <input type="text">   
-  </label>
-  <br>
-<label for="">
-upload 2
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-   
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-    
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-    
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-are you interested in audit protection?
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-bank account and routing for deposit
-    <input type="text">   
-  </label>
-  <br>
-  <label for="">
-itemized deductions
-    <input type="text">   
-  </label>
-  <br>
+<div class="row requiredRow">
+	<legend for="firstName">First Name</legend>
+	<input type="text" class="required" title="firstName. This is a required field" />
+	<legend for="lastName">Last Name </legend>
+	<input type="text" class="required" title="lastName . This is a required field" />
+	<legend for="occupation">occupation</legend>
+	<input type="text" class="required" title="occupation. This is a required field" />
+</div>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Are you trying to buy a new home within the next 2 yrs </legend>
+		<span><input value="Yes" type="radio" class="required" title="Yes. This is a required field" /> <label>Yes</label></span>
+ 		<span><input value="No"  type="radio" class="required" title="No. This is a required field" /> <label>No</label></span>
+ 	</fieldset>
+</div>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Are you interested in credit repair</legend>
+		<span><input value="Yes" id="areyouinterestedincreditrepair_21" name="areyouinterestedincreditrepair" type="radio" class="required" title="Yes. This is a required field" /> <label for="areyouinterestedincreditrepair_21">Yes</label></span>
+ 		<span><input value="No" id="areyouinterestedincreditrepair_22" name="areyouinterestedincreditrepair" type="radio" class="required" title="No. This is a required field" /> <label for="areyouinterestedincreditrepair_22">No</label></span>
+ 	</fieldset>
+</div>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Will you be filing a tax return with your spouse?* </legend>
+		<span><input value="Yes" id="Willyoubefilingataxreturnwithyourspouse?_23" name="Willyoubefilingataxreturnwithyourspouse?" type="radio" class="required" title="Yes. This is a required field" /> <label for="Willyoubefilingataxreturnwithyourspouse?_23">Yes</label></span>
+ 		<span><input value="No" id="Willyoubefilingataxreturnwithyourspouse?_24" name="Willyoubefilingataxreturnwithyourspouse?" type="radio" class="required" title="No. This is a required field" /> <label for="Willyoubefilingataxreturnwithyourspouse?_24">No</label></span>
+ 	</fieldset>
+</div>
+	<input id="TaxpayerSSNrequired" name="TaxpayerSSNrequired" type="hidden" title="TaxpayerSSN required. This is a required field" />
+<div class="row requiredRow">
+	<label for="DOB">DOB</label>
+	<input id="DOB" name="DOB" type="date" class="required" title="TaxpayerSSN required. This is a required field" />
+</div>
+<div class="row requiredRow">
+	<label for="DL#">DL # </label>
+	<input id="DL#" name="DL#" type="text" class="required" title="DL # . This is a required field" />
+</div>
+<div class="row requiredRow">
+	<label for="state">state</label>
+	<select id="state" name="state" class="required" title="state. This is a required field">
+		<option value="Alabama">Alabama</option>
+		<option value="Alaska">Alaska</option>
+		<option value="Arizona">Arizona</option>
+		<option value="Arkansas">Arkansas</option>
+		<option value="California">California</option>
+		<option value="Colorado">Colorado</option>
+		<option value="Connecticut">Connecticut</option>
+		<option value="Delaware">Delaware</option>
+		<option value="Florida">Florida</option>
+		<option value="Georgia">Georgia</option>
+		<option value="Hawaii">Hawaii</option>
+		<option value="Idaho">Idaho</option>
+		<option value="Illinois">Illinois</option>
+    <option value="Indiana">Indiana</option>
+		<option value="Iowa">Iowa</option>
+		<option value="Kansas">Kansas</option>
+		<option value="Kentucky">Kentucky</option>
+		<option value="Louisiana">Louisiana</option>
+		<option value="Maine">Maine</option>
+		<option value="Maryland">Maryland</option>
+		<option value="Massachusetts">Massachusetts</option>
+		<option value="Michigan">Michigan</option>
+		<option value="Minnesota">Minnesota</option>
+		<option value="Mississippi">Mississippi</option>
+		<option value="Missouri">Missouri</option>
+		<option value="Montana">Montana</option>
+    <option value="Nebraska">Nebraska</option>
+		<option value="Nevada">Nevada</option>
+		<option value="New Hampshire">New Hampshire</option>
+		<option value="New Jersey">New Jersey</option>
+		<option value="New Mexico">New Mexico</option>
+		<option value="New York">New York</option>
+		<option value="North Carolina">North Carolina</option>
+		<option value="North Dakota">North Dakota</option>
+		<option value="Ohio">Ohio</option>
+		<option value="Oklahoma">Oklahoma</option>
+		<option value="Oregon">Oregon</option>
+		<option value="Pennsylvania">Pennsylvania</option>
+    <option value="Rhode Island">Rhode Island</option>
+		<option value="South Carolina">South Carolina</option>
+		<option value="South Dakota">South Dakota</option>
+		<option value="Tennessee">Tennessee</option>
+		<option value="Texas">Texas</option>
+		<option value="Utah">Utah</option>
+		<option value="Vermont">Vermont</option>
+		<option value="Virginia">Virginia</option>
+		<option value="Washington">Washington</option>
+		<option value="West Virginia">West Virginia</option>
+		<option value="Wisconsin">Wisconsin</option>
+		<option value="Wyoming">Wyoming</option>
+	</select>
+</div>
+<div class="row requiredRow">
+	<label for="issdate">iss date</label>
+	<input id="issdate" name="issdate" type="date" class="required" title="state. This is a required field" />
+</div>
+<div class="row requiredRow">
+	<label for="expdate">exp date</label>
+	<input id="expdate" name="expdate" type="date" class="required" title="state. This is a required field" />
+</div>
+<div class="row requiredRow">
+	<label for="phone#">phone #</label>
+	<input id="phone#" name="phone#" type="tel" class="required" title="state. This is a required field" />
+</div>
+<div class="row">
+	<label for="SpouseName">Spouse Name</label>
+	<input id="SpouseName" name="SpouseName" type="text" />
+</div>
+<div class="row">
+	<label for="SpouseLastName">Spouse Last Name</label>
+	<input id="SpouseLastName" name="SpouseLastName" type="text" />
+</div>
+<legend>Spouse* Social Security Number</legend>
+	<input id="SpouseSSNrequired" name="SpouseSSNrequired" type="text" class="required" />
+<div class="row">
+	<label for="DOB">DOB</label>
+	<input id="DOB" name="DOB" type="date" />
+</div>
+<div class="row">
+	<label for="DL#">DL # </label>
+	<input id="DL#" name="DL#" type="text" />
+</div>
+<div class="row">
+	<label for="state">state</label>
+	<select id="state" name="state">
+	<option value="Alabama">Alabama</option>
+		<option value="Alaska">Alaska</option>
+		<option value="Arizona">Arizona</option>
+		<option value="Arkansas">Arkansas</option>
+		<option value="California">California</option>
+		<option value="Colorado">Colorado</option>
+		<option value="Connecticut">Connecticut</option>
+		<option value="Delaware">Delaware</option>
+		<option value="Florida">Florida</option>
+		<option value="Georgia">Georgia</option>
+		<option value="Hawaii">Hawaii</option>
+		<option value="Idaho">Idaho</option>
+		<option value="Illinois">Illinois</option>
+    <option value="Indiana">Indiana</option>
+		<option value="Iowa">Iowa</option>
+		<option value="Kansas">Kansas</option>
+		<option value="Kentucky">Kentucky</option>
+		<option value="Louisiana">Louisiana</option>
+		<option value="Maine">Maine</option>
+		<option value="Maryland">Maryland</option>
+		<option value="Massachusetts">Massachusetts</option>
+		<option value="Michigan">Michigan</option>
+		<option value="Minnesota">Minnesota</option>
+		<option value="Mississippi">Mississippi</option>
+		<option value="Missouri">Missouri</option>
+		<option value="Montana">Montana</option>
+    <option value="Nebraska">Nebraska</option>
+		<option value="Nevada">Nevada</option>
+		<option value="New Hampshire">New Hampshire</option>
+		<option value="New Jersey">New Jersey</option>
+		<option value="New Mexico">New Mexico</option>
+		<option value="New York">New York</option>
+		<option value="North Carolina">North Carolina</option>
+		<option value="North Dakota">North Dakota</option>
+		<option value="Ohio">Ohio</option>
+		<option value="Oklahoma">Oklahoma</option>
+		<option value="Oregon">Oregon</option>
+		<option value="Pennsylvania">Pennsylvania</option>
+    <option value="Rhode Island">Rhode Island</option>
+		<option value="South Carolina">South Carolina</option>
+		<option value="South Dakota">South Dakota</option>
+		<option value="Tennessee">Tennessee</option>
+		<option value="Texas">Texas</option>
+		<option value="Utah">Utah</option>
+		<option value="Vermont">Vermont</option>
+		<option value="Virginia">Virginia</option>
+		<option value="Washington">Washington</option>
+		<option value="West Virginia">West Virginia</option>
+		<option value="Wisconsin">Wisconsin</option>
+		<option value="Wyoming">Wyoming</option>
+	</select>
+</div>
+<div class="row">
+	<label for="issdate">iss date</label>
+	<input id="issdate" name="issdate" type="date" />
+</div>
+<div class="row">
+	<label for="expdate">exp date</label>
+	<input id="expdate" name="expdate" type="date" />
+</div>
+<div class="row">
+	<label for="phone#">phone #</label>
+	<input id="phone#" name="phone#" type="tel" />
+</div>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Type of incomes</legend>
+		<span><input value="W2" type="checkbox" class="required" title="W2. This is a required field" /> <label>W2</label></span>
+ 		<span><input value="W2-G" type="checkbox" class="required" title="W2-G. This is a required field" /> <label>W2-G</label></span>
+ 		<span><input value="1099-R" type="checkbox" class="required" title="1099-R. This is a required field" /> <label>1099-R</label></span>
+ 		<span><input value="1099-DIV" type="checkbox" class="required" title="1099-DIV. This is a required field" /> <label>1099-DIV</label></span>
+ 		<span><input value="1099-INT" type="checkbox" class="required" title="1099-INT. This is a required field" /> <label>1099-INT</label></span>
+ 		<span><input value="1099-G" type="checkbox" class="required" title="1099-G. This is a required field" /> <label>1099-G</label></span>
+ 		<span><input value="1099-MISC" type="checkbox" class="required" title="1099-MISC. This is a required field" /> <label>1099-MISC</label></span>
+ 		<span><input value="1099-NEC" type="checkbox" class="required" title="1099-NEC. This is a required field" /> <label>1099-NEC</label></span>
+ 		<span><input value="1099-SSA" type="checkbox" class="required" title="1099-SSA. This is a required field" /> <label>1099-SSA</label></span>
+ 	</fieldset>
+</div>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Do you have dependents?</legend>
+		<span><input value="Yes" id="Doyouhavedependents?_34" name="Doyouhavedependents?" type="radio" class="required" title="Yes. This is a required field" /> <label for="Doyouhavedependents?_34">Yes</label></span>
+ 		<span><input value="No" id="Doyouhavedependents?_35" name="Doyouhavedependents?" type="radio" class="required" title="No. This is a required field" /> <label for="Doyouhavedependents?_35">No</label></span>
+ 	</fieldset>
+</div>
+<div class="row">
+	<label for="dependentFirstName">Dependent's First Name</label>
+	<input name="dependentFirstName" type="text" />
+</div>
+<div class="row">
+	<label for="dependentLastName">Dependent's Last Name</label>
+	<input id="dependentLastName" name="dependentLastName" type="text" />
+</div>
+<div class="row">
+	<label for="dependentSSN">Dependent's Social Security Number</label>
+	<input id="dependentSSN" name="dependentSSN" type="text" />
+</div>
+<div class="row">
+	<label for="dependentDOB">Dependent's date of birth</label>
+	<input id="dependentDOB" name="dependentDOB" type="date" />
+</div>
+<div class="row">
+	<label for="relationship">Relationship</label>
+	<select class="btn btn-info dropdown-toggle" name="relationship">
+		<option value="daughter">daughter</option>
+		<option value="son">son</option>
+		<option value="niece">niece</option>
+		<option value="nephew ">nephew </option>
+	</select>
+</div>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Did you have marketplace health insurance, if yes upload 1095-A </legend>
+		<span><input value="Yes" id="didyouhavemarketplacehealthinsuranceifyesupload1095-A_36" name="didyouhavemarketplacehealthinsuranceifyesupload1095-A" type="radio" class="required" title="Yes. This is a required field" /> <label for="didyouhavemarketplacehealthinsuranceifyesupload1095-A_36">Yes</label></span>
+ 		<span><input value="No" id="didyouhavemarketplacehealthinsuranceifyesupload1095-A_37" name="didyouhavemarketplacehealthinsuranceifyesupload1095-A" type="radio" class="required" title="No. This is a required field" /> <label for="didyouhavemarketplacehealthinsuranceifyesupload1095-A_37">No</label></span>
+ 	</fieldset>
+</div>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Did you, spouse or dependent attend school in the current tax year?, if yes upload 1098-T </legend>
+		<span><input value="Yes" name="Didyouspouseordependentattendedschool?upload1098-T" type="radio" class="required" title="Yes. This is a required field" /> <label for="Didyouspouseordependentattendedschool?upload1098-T_38">Yes</label></span>
+ 		<span><input value="No"  name="Didyouspouseordependentattendedschool?upload1098-T" type="radio" class="required" title="No. This is a required field" /> <label for="Didyouspouseordependentattendedschool?upload1098-T_39">No</label></span>
+ 	</fieldset>
+</div>
+<div class="row requiredRow">
+	<label for="uploadID">upload ID</label>
+	<input class="btn btn-outline-info" type="file" id="myFile">
+</div>
+<div class="row requiredRow">
+	<legend for="uploadincomedocuments">upload income documents</legend>
+	<input class="btn btn-outline-info"  type="file" id="myFile">
+</div>
+<div class="row requiredRow">
+	<fieldset>
+		<legend>Are you interested in audit protection?</legend>
+		<span><input value="Yes" type="radio" class="required" title="Yes. This is a required field" /> <label>Yes</label></span>
+ 		<span><input value="No" type="radio" class="required" title="No. This is a required field" /> <label>No</label></span>
+ 	</fieldset>
+</div>
+<div class="row requiredRow">
+	<label for="bankInfo">bank account and routing number you want refund deposited into</label>
+	<input type="text">
+</div>
+<div class="row requiredRow">
+	<label for="itemizeddeductions">Itemized deductions</label>
+	<input class="btn btn-outline-info" type="file" id="myFile">
+</div>
+<div class="row">
+<input type="submit" value="Submit form" />
+</div>
 </form>
-
