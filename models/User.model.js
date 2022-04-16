@@ -38,6 +38,12 @@ const userSchema = new Schema(
     address: {
       type: String,
     },
+    forms: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Forms",
+      },
+    ],
   },
   {
     timestamps: true,
