@@ -1,0 +1,22 @@
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+ul {
+  list-style: none;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

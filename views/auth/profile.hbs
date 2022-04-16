@@ -37,7 +37,9 @@
       </a>
     </button>
 
-  {{else}}
+  {{/if_eq}}
+
+  {{#if_eq userInSession.userType "user"}}
     <button>
       <a href="/personal-info/{{userInSession._id}}">
         Personal Info

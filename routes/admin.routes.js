@@ -14,4 +14,20 @@ router.get("/roles", isLoggedIn, isAdmin, (req, res, next) => {
     .catch((err) => console.log(err))
 })
 
+router.get("/user-role/:id", isLoggedIn, isAdmin, (req, res, next) => {
+  User.findById(req.params.id)
+    .then((userDetails) => {
+      res.render("admin-pages/admin-user-details", userDetails)
+    })
+    .catch((err) => console.log(err))
+})
+
+router.post("/user-role/:id", (req, res) => {
+  const { userType } = req.body
+
+  User.findByIdAndUpdate(req.params.id, { userType }, { new: true })
+    .then((updatedUser) => res.redirect(`/roles`))
+    .catch((err) => console.log(err))
+})
+
 module.exports = router
