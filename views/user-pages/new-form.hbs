@@ -20,13 +20,13 @@
 	<label for="referral">IF referred, type name here</label>
 	<input name="referralName" type="text" />
 </div>
-<div class="row requiredRow">
+{{!-- <div class="row requiredRow">
 	<fieldset>
 		<legend>Were you previously issued an Identity Protection PIN (IP PIN) by the IRS</legend>
-		<span><input value="Yes" name="identityPIN" type="radio" class="required" title="Yes. This is a required field" /> <label>Yes</label></span>
- 		<span><input value="No" name="identityPIN" type="radio" class="required" title="No. This is a required field" /> <label>No</label></span>
+		<span><input value="Yes" name="identityPIN" type="radio" class="required" /> <label>Yes</label></span>
+ 		<span><input value="No" name="identityPIN" type="radio" class="required"/> <label>No</label></span>
  	</fieldset>
-</div>
+</div> --}}
 <div class="row requiredRow">
 	<fieldset>
 		<legend>Are you a US citizen? </legend>
@@ -44,50 +44,50 @@
 		<option value="qualifying widow">qualifying widow</option>
 	</select>
 </div>
-<div class="row requiredRow">
+{{!-- <div class="row requiredRow">
 	<fieldset>
 		<legend>Can another taxpayer claim you as a dependent on their tax return?</legend>
 		<span><input value="Yes" name="isTaxpayerDependent" type="radio" class="required" title="Yes. This is a required field" /> <label>Yes</label></span>
  		<span><input value="No"  name="isTaxpayerDependent" type="radio" class="required" title="No. This is a required field" /> <label>No</label></span>
  	</fieldset>
-</div>
-<div class="row requiredRow">
+</div> --}}
+{{!-- <div class="row requiredRow">
 	<legend>What year(s) are you filing?</legend>
 	<select name="filingYear" class="btn btn-info dropdown-toggle" title="filing year">
 		<option value="2019">2019</option>
 		<option value="2020">2020</option>
 		<option value="2021">2021</option>
 	</select>
-</div>
+</div> --}}
 <div class="row requiredRow">
 	<legend for="firstName">First Name</legend>
 	<input type="text" class="required" name="firstName" value="{{userInfo.firstName}}" />
 	<legend for="lastName">Last Name </legend>
-	<input type="text" class="required" name="lastName" />
+	<input type="text" class="required" name="lastName" value="{{userInfo.lastName}}" />
 	<legend for="occupation">occupation</legend>
-	<input type="text" class="required" name="occupation" />
+	<input type="text" class="required" name="occupation" value="{{userInfo.occupation}}"/>
 </div>
-<div class="row requiredRow">
+{{!-- <div class="row requiredRow">
 	<fieldset>
 		<legend>Are you trying to buy a new home within the next 2 yrs </legend>
-		<span><input value="Yes" type="radio" class="required" name="homeBuyer" /> <label>Yes</label></span>
- 		<span><input value="No"  type="radio" class="required" name="homeBuyer" /> <label>No</label></span>
+		{{!-- <span><input value="Yes" type="radio" class="required" name="homeBuyer" value="{{userInfo.homeBuyer}}"/> <label>Yes</label></span> --}}
+ 		{{!-- <span><input value="No"  type="radio" class="required" name="homeBuyer" /> <label>No</label></span>
  	</fieldset>
-</div>
-<div class="row requiredRow">
+</div> --}} 
+{{!-- <div class="row requiredRow">
 	<fieldset>
 		<legend>Are you interested in credit repair</legend>
 		<span><input value="Yes" name="creditRepairYes" type="radio" class="required" /> <label>Yes</label></span>
  		<span><input value="No"  name="creditRepairNO" type="radio" class="required" /> <label>No</label></span>
  	</fieldset>
-</div>
-<div class="row requiredRow">
+</div> --}}
+{{!-- <div class="row requiredRow">
 	<fieldset>
 		<legend>Will you be filing a tax return with your spouse?* </legend>
 		<span><input value="Yes"  type="radio" class="required" name="filingWithSpouse" /> <label >Yes</label></span>
  		<span><input value="No"   type="radio" class="required" name="filingWithSpouse" /> </label> No</span>
  	</fieldset>
-</div>
+</div> --}}
 <legend>Social Security Number</legend>
 	<input id="TaxpayerSSNrequired" name="TaxpayerSSN" type="text" title="TaxpayerSSN required. This is a required field" />
 <div class="row requiredRow">
@@ -173,7 +173,7 @@
 	<label for="SpouseLastName">Spouse Last Name</label>
 	<input name="SpouseLastName" type="text" />
 </div>
-<div class="row">
+{{!-- <div class="row">
 	<label for="SpouseName">Spouse Social Security Number</label>
 	<input id="SpouseName" name="SpouseSSN" type="text" />
 </div>
@@ -251,7 +251,7 @@
 <div class="row">
 	<label for="phone#">phone #</label>
 	<input id="phone#" name="spousePhoneNumber" type="tel" />
-</div>
+</div> --}}
 <div class="row requiredRow">
 	<fieldset>
 		<legend>Type of incomes</legend>
@@ -266,14 +266,14 @@
  		<span><input value="1099-SSA" type="checkbox" name="typeOfIncome" /> <label>1099-SSA</label></span>
  	</fieldset>
 </div>
-<div class="row requiredRow">
+{{!-- <div class="row requiredRow">
 	<fieldset>
 		<legend>Do you have dependents?</legend>
 		<span><input value="Yes" type="radio" class="required" name="filingWithDependent" /> <label>Yes</label></span>
  		<span><input value="No" type="radio" class="required"/> <label >No</label></span>
  	</fieldset>
-</div>
-<div class="row">
+</div> --}}
+{{!-- <div class="row">
 	<label for="dependentFirstName">Dependent's First Name</label>
 	<input name="dependentFirstName" type="text" />
 </div>
@@ -304,37 +304,37 @@
 		<span><input value="Yes" type="radio" class="required" name="healthInsurance"/> <label >Yes</label></span>
  		<span><input value="No"  type="radio" class="required" name="healthInsurance"/> <label >No</label></span>
  	</fieldset>
-</div>
-<div class="row requiredRow">
+</div> --}}
+{{!-- <div class="row requiredRow">
 	<fieldset>
 		<legend>Did you, spouse or dependent attend school in the current tax year?, if yes upload 1098-T </legend>
 		<span><input value="Yes" type="radio" class="required" name="schoolForm"/> <label >Yes</label></span>
  		<span><input value="No"  type="radio" class="required" name="schoolForm"/> <label >No</label></span>
  	</fieldset>
-</div>
-<div class="row requiredRow">
+</div> --}}
+{{!-- <div class="row requiredRow">
 	<legend for="uploadID">upload ID</legend>
 	<input class="btn btn-outline-info" type="file" name="imageOfID">
-</div>
+</div> --}}
 <div class="row requiredRow">
 	<legend >upload income documents</legend>
 	<input class="btn btn-outline-info"  type="file" name="taxDocs">
 </div>
-<div class="row requiredRow">
+{{!-- <div class="row requiredRow">
 	<fieldset>
 		<legend>Are you interested in audit protection?</legend>
 		<span><input value="Yes" type="radio" class="required" name="auditProtection" /> <label>Yes</label></span>
  		<span><input value="No" type="radio" class="required" name="auditProtection"/> <label>No</label></span>
  	</fieldset>
-</div>
+</div> --}}
 <div class="row requiredRow">
 	<legend for="bankInfo">bank account and routing number you want refund deposited into</legend>
 	<input type="textbox">
 </div>
-<div class="row requiredRow">
+{{!-- <div class="row requiredRow">
 	<legend for="itemizeddeductions">Itemized deductions</legend>
 	<input class="btn btn-outline-info" type="file" name="itemizedDeductions">
-</div>
+</div> --}}
 <div class="row">
 <input type="submit" value="Submit form" />
 </div>
