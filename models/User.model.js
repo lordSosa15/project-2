@@ -41,7 +41,7 @@ const userSchema = new Schema(
     forms: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Forms",
+        ref: "Form",
       },
     ],
   },

@@ -5,10 +5,10 @@ const formSchema = new Schema(
     referralName: {
       type: String,
     },
-    identityPIN: {
-      type: Number,
-      required: [true, "username is required."],
-    },
+    // identityPIN: {
+    //   type: Number,
+    //   required: [true, "username is required."],
+    // },
     UScitizen: {
       type: String,
       unique: true,
@@ -16,124 +16,130 @@ const formSchema = new Schema(
     },
     taxpayerFilingStatus: {
       type: String,
-      enum: ['single', 'married filling jointly', 'married filling separately"', 'head of household', 'qualifying widow'],
+      enum: [
+        "single",
+        "married filling jointly",
+        'married filling separately"',
+        "head of household",
+        "qualifying widow",
+      ],
     },
-    isTaxpayerDependent: {
-      type: Boolean,
-    },
-    filingYear: {
-      type: Number,
-      enum: ['2019', '2020', '2021']
-    },
-    firstName:{
-        type: String
+    // isTaxpayerDependent: {
+    //   type: Boolean,
+    // },
+    // filingYear: {
+    //   type: Number,
+    //   enum: ["2019", "2020", "2021"],
+    // },
+    firstName: {
+      type: String,
     },
     lastName: {
-        type: String
-    },
-    birthday: {
       type: String,
-      format: Date,
     },
     occupation: {
       type: String,
     },
-    homeBuyer: {
-        type: Boolean
-    },
-    filingWithSpouse:{
-        type: Boolean,
-        // if (yes)
-        // SpouseFirstName: {
-        //     type: String 
-        // }, 
-        // SpouseLastName :{
-        //     type: String
-        // },
-        // spouseSSN: {
-        //     type: Number
-        // },
-        // spouseBirthday: {
-        //     type: Date
-        // },
-        // spouseDriverLicense: {
-        //     type: String
-        // },
-        // spouseDLstate :{
-        //     type: String
-        // },
-        // spouseDLissDate: {
-        //     type: Date
-        // },
-        // spousePhoneNumber: {
-        //     type: Number
-        // },
-    },
+    // birthday: {
+    //   type: String,
+    //   format: Date,
+    // },
+    // homeBuyer: {
+    //   type: Boolean,
+    // },
+    // filingWithSpouse: {
+    //   type: Boolean,
+    // if (yes)
+    // SpouseFirstName: {
+    //     type: String
+    // },
+    // SpouseLastName :{
+    //     type: String
+    // },
+    // spouseSSN: {
+    //     type: Number
+    // },
+    // spouseBirthday: {
+    //     type: Date
+    // },
+    // spouseDriverLicense: {
+    //     type: String
+    // },
+    // spouseDLstate :{
+    //     type: String
+    // },
+    // spouseDLissDate: {
+    //     type: Date
+    // },
+    // spousePhoneNumber: {
+    //     type: Number
+    //   // },
+    // },
     TaxpayerSSN: {
-        type: Number
+      type: Number,
     },
     taxpayerDOB: {
-        type: Date
+      type: Date,
     },
     driversLicense: {
-        type: String
+      type: String,
     },
     licenseState: {
-        type: String
+      type: String,
     },
     issuedDate: {
-        type: Date
+      type: Date,
     },
     expDate: {
-        type: Date
+      type: Date,
     },
-    taxpayerPhoneNumber : {
-        type: Number
+    taxpayerPhoneNumber: {
+      type: Number,
     },
     typeOfIncome: {
-        type: Array
+      type: Array,
     },
-    filingWithDependent: {
-        type: Boolean,
-        // if (yes)
-        // dependentFirstName: {
-        //     type: String
-        // },
-        // dependentLastName: {
-        //     type: String
-        // },
-        // dependentSSN: {
-        //     type: Number
-        // },
-        // dependentBirthdate: {
-        //     type: Date
-        // },
-        // relationship: {
-        //     type: String
-        // },
-    },
-    healthInsurance: {
-        type: File,
-    },
-    schoolForm: {
-        type: File
-    },
-    imageOfID: {
-        type: File
-    },
+    // filingWithDependent: {
+    //   type: Boolean,
+    // if (yes)
+    // dependentFirstName: {
+    //     type: String
+    // },
+    // dependentLastName: {
+    //     type: String
+    // },
+    // dependentSSN: {
+    //     type: Number
+    // },
+    // dependentBirthdate: {
+    //     type: Date
+    // },
+    // relationship: {
+    //     type: String
+    // },
+    // },
+    // healthInsurance: {
+    //   type: File,
+    // },
+    // schoolForm: {
+    //   type: File,
+    // },
+    // imageOfID: {
+    //   type: File,
+    // },
     taxDocs: {
-        type: File
+      type: File,
     },
-    auditProtection: {
-        type: Boolean
-    },
+    // auditProtection: {
+    //   type: Boolean,
+    // },
     bankInfo: {
-        type: String
+      type: String,
     },
-    itemizedDeductions: {
-        type: File
-    }
-},   
+    // itemizedDeductions: {
+    //   type: File,
+    // },
+  },
   {
     timestamps: true,
   }
