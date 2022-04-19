@@ -1,0 +1,142 @@
+const { Schema, model } = require("mongoose")
+
+const formSchema = new Schema(
+  {
+    referralName: {
+      type: String,
+    },
+    identityPIN: {
+      type: Number,
+      required: [true, "username is required."],
+    },
+    UScitizen: {
+      type: String,
+      unique: true,
+      required: [true, "email is required."],
+    },
+    taxpayerFilingStatus: {
+      type: String,
+      enum: ['single', 'married filling jointly', 'married filling separately"', 'head of household', 'qualifying widow'],
+    },
+    isTaxpayerDependent: {
+      type: Boolean,
+    },
+    filingYear: {
+      type: Number,
+      enum: ['2019', '2020', '2021']
+    },
+    firstName:{
+        type: String
+    },
+    lastName: {
+        type: String
+    },
+    birthday: {
+      type: String,
+      format: Date,
+    },
+    occupation: {
+      type: String,
+    },
+    homeBuyer: {
+        type: Boolean
+    },
+    filingWithSpouse:{
+        type: Boolean,
+        // if (yes)
+        // SpouseFirstName: {
+        //     type: String 
+        // }, 
+        // SpouseLastName :{
+        //     type: String
+        // },
+        // spouseSSN: {
+        //     type: Number
+        // },
+        // spouseBirthday: {
+        //     type: Date
+        // },
+        // spouseDriverLicense: {
+        //     type: String
+        // },
+        // spouseDLstate :{
+        //     type: String
+        // },
+        // spouseDLissDate: {
+        //     type: Date
+        // },
+        // spousePhoneNumber: {
+        //     type: Number
+        // },
+    },
+    TaxpayerSSN: {
+        type: Number
+    },
+    taxpayerDOB: {
+        type: Date
+    },
+    driversLicense: {
+        type: String
+    },
+    licenseState: {
+        type: String
+    },
+    issuedDate: {
+        type: Date
+    },
+    expDate: {
+        type: Date
+    },
+    taxpayerPhoneNumber : {
+        type: Number
+    },
+    typeOfIncome: {
+        type: Array
+    },
+    filingWithDependent: {
+        type: Boolean,
+        // if (yes)
+        // dependentFirstName: {
+        //     type: String
+        // },
+        // dependentLastName: {
+        //     type: String
+        // },
+        // dependentSSN: {
+        //     type: Number
+        // },
+        // dependentBirthdate: {
+        //     type: Date
+        // },
+        // relationship: {
+        //     type: String
+        // },
+    },
+    healthInsurance: {
+        type: File,
+    },
+    schoolForm: {
+        type: File
+    },
+    imageOfID: {
+        type: File
+    },
+    taxDocs: {
+        type: File
+    },
+    auditProtection: {
+        type: Boolean
+    },
+    bankInfo: {
+        type: String
+    },
+    itemizedDeductions: {
+        type: File
+    }
+},   
+  {
+    timestamps: true,
+  }
+)
+
+module.exports = model("Form", formSchema)
