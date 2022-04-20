@@ -1,5 +1,6 @@
 const express = require("express")
 const User = require("../models/User.model")
+const Form = require("../models/Form.model")
 const router = express.Router()
 const bcrypt = require("bcrypt")
 const { default: mongoose } = require("mongoose")
@@ -18,9 +19,9 @@ router.post("/auth/signup", (req, res, next) => {
 
   const saltRounds = 10
 
-  const { username, email, password } = req.body
+  const { firstName, lastName, username, email, password } = req.body
 
-  if (!username || !email || !password) {
+  if (!firstName || !lastName || !username || !email || !password) {
     res.render("auth/signup", {
       errorMessage:
         " all fields are mandatory, please provide your username , email and password",
@@ -45,6 +46,8 @@ router.post("/auth/signup", (req, res, next) => {
     .then((hashedPassword) => {
       //console.log(hashedPassword)
       return User.create({
+        firstName,
+        lastName,
         username,
         email,
         passwordHash: hashedPassword,

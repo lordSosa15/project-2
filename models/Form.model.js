@@ -11,8 +11,7 @@ const formSchema = new Schema(
     // },
     UScitizen: {
       type: String,
-      unique: true,
-      required: [true, "email is required."],
+      //   required: [true, "email is required."],
     },
     taxpayerFilingStatus: {
       type: String,
@@ -128,7 +127,7 @@ const formSchema = new Schema(
     //   type: File,
     // },
     taxDocs: {
-      type: File,
+      type: String, // was File but i kept getting error so i changed it
     },
     // auditProtection: {
     //   type: Boolean,

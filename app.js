@@ -21,6 +21,10 @@ hbs.registerHelper("if_eq", function (a, b, opts) {
   }
 })
 
+hbs.registerHelper("index_of", function (context, ndx) {
+  return context[ndx]
+})
+
 const app = express()
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware

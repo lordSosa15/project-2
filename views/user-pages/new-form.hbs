@@ -11,7 +11,7 @@
 ></iframe>
 <script src="https://www.cognitoforms.com/f/iframe.js"></script> }}
 
-<form action="/tax-info/{{userInfo._id}}" method="post">
+<form action="/new-form/{{userInfo._id}}" method="post">
 
   {{! must add populate once it's saved and rended /tax-info page }}
   <div class="row">
@@ -116,7 +116,13 @@
   />
   <div class="row requiredRow">
     <label for="DOB">Date of birth</label>
-    <input id="DOB" name="taxpayerDOB" type="date" class="required" />
+    <input
+      id="DOB"
+      name="taxpayerDOB"
+      type="date"
+      class="required"
+      value="{{userInfo.birthday}}"
+    />
   </div>
   <div class="row requiredRow">
     <label for="DL#">Driver's License number </label>

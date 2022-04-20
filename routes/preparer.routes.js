@@ -1,4 +1,5 @@
 const User = require("../models/User.model")
+const Form = require("../models/Form.model")
 const express = require("express")
 const router = express.Router()
 const { isLoggedIn, isPreparer } = require("../config/route-guard.config")
@@ -15,6 +16,7 @@ router.get("/users-list", isLoggedIn, isPreparer, (req, res, next) => {
 
 router.get("/user-details/:id", isLoggedIn, isPreparer, (req, res, next) => {
   User.findById(req.params.id)
+    .populate("forms")
     .then((userDetails) => {
       res.render("preparer-pages/user-details", userDetails)
     })

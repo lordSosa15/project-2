@@ -9,13 +9,13 @@ const userSchema = new Schema(
     },
     username: {
       type: String,
-      unique: true,
+      // unique: true,
       trim: true,
       required: [true, "username is required."],
     },
     email: {
       type: String,
-      unique: true,
+      // unique: true,
       trim: true,
       required: [true, "email is required."],
       match: [/^\S+@\S+\.\S+$/, "Please use a valid email address"], //it can be here or in auth.routes

@@ -46,8 +46,19 @@
       </a>
     </button>
 
+    {{#if userInSession.forms}}
+      
+ <button>
+        <a href="/tax-info/{{#index_of userInSession.forms 0}}{{/index_of}}">
+          Form Details
+        </a>
+      </button>
+     
+
+    {{/if}}
+
     <button>
-      <a href="/new-form">
+      <a href="/new-form/{{userInSession._id}}">
         New Form
       </a>
     </button>

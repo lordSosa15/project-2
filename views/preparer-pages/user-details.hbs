@@ -20,4 +20,18 @@
   <br />
   Most recent submitted form:
 
+  {{#if forms}}
+    {{#each forms}}
+      <br />
+      <a href="/tax-info/{{_id}}">
+        Click here for the most recent form's details.
+      </a>
+    {{/each}}
+  {{else}}
+    <br />
+    There are no past forms submitted.
+  {{/if}}
+
 </h6>
+
+<button class="backBtn" onclick="history.back()">Go Back</button>

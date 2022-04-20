@@ -1,4 +1,5 @@
 const User = require("../models/User.model")
+const Form = require("../models/Form.model")
 const express = require("express")
 const router = express.Router()
 const { isLoggedIn, isLoggedOut } = require("../config/route-guard.config")
@@ -29,8 +30,63 @@ router.post("/personal-info/:id", (req, res, next) => {
     .catch((err) => console.log(err))
 })
 
-router.get("/new-form", isLoggedIn, (req, res, next) => {
-  res.render("user-pages/new-form")
+router.get("/new-form/:id", isLoggedIn, (req, res, next) => {
+  User.findById(req.params.id)
+    .then((userInfo) => {
+      res.render("user-pages/new-form", { userInfo })
+    })
+    .catch((err) => console.log(err))
+})
+
+router.post("/new-form/:id", isLoggedIn, (req, res, next) => {
+  const {
+    referralName,
+    UScitizen,
+    taxpayerFilingStatus,
+    firstName,
+    lastName,
+    occupation,
+    TaxpayerSSN,
+    taxpayerDOB,
+    driversLicense,
+    licenseState,
+    issuedDate,
+    expDate,
+    taxpayerPhoneNumber,
+    typeOfIncome,
+    taxDocs,
+    bankInfo,
+  } = req.body
+
+  Form.create({
+    referralName,
+    UScitizen,
+    taxpayerFilingStatus,
+    firstName,
+    lastName,
+    occupation,
+    TaxpayerSSN,
+    taxpayerDOB,
+    driversLicense,
+    licenseState,
+    issuedDate,
+    expDate,
+    taxpayerPhoneNumber,
+    typeOfIncome,
+    taxDocs,
+    bankInfo,
+  })
+    .then((newFormFromDB) => {
+      User.findByIdAndUpdate(
+        req.params.id,
+        { $push: { forms: newFormFromDB._id } },
+        { new: true }
+      ).then((updatedUser) => {
+        req.session.currentUser = updatedUser
+        res.redirect("/auth/profile")
+      })
+    })
+    .catch((err) => console.log(err))
 })
 
 module.exports = router
