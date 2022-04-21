@@ -1,1 +1,57 @@
 <h2> Form Details </h2>
+
+
+referred by:
+{{userInSession.referralName  }}
+
+citizen: 
+{{ userInSession.UScitizen  }}
+
+taxpayerFilingStatus
+{{ userInSession.taxpayerFilingStatus  }}
+
+firstName
+{{ userInSession.firstName  }}
+
+lastName
+{{ userInSession.lastName  }}
+
+occupation
+{{  userInSession.occupation }}
+
+    taxpayerSSN
+    {{  userInSession.taxpayerSSN  }}
+
+    taxpayerDOB
+    {{  userInSession.taxpayerDOB  }}
+
+    driversLicense
+    {{  userInSession.driversLicense  }}
+
+    licenseState
+    {{  userInSession.licenseState  }}
+
+    issuedDate
+    {{  userInSession.issuedDate  }}
+
+    expDate
+    {{  userInSession.expDate }}
+
+    taxpayerPhoneNumber
+   {{  userInSession.taxpayerPhoneNumber }}
+
+    typeOfIncome
+    {{  userInSession.typeOfIncome  }}
+
+    taxDocs
+    {{  taxDocs  }}
+
+    <img src="{{ userInSession.taxDocs }}">
+    <br>
+     <form action="/user-pages/change-taxDocs" method="POST" enctype="multipart/form-data">
+        <input type="file" name="taxDocs">
+        <button> re-upload tax documents </button>
+    </form>
+
+    bankInfo
+    {{bankInfo}}

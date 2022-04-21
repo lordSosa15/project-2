@@ -74,7 +74,7 @@ const formSchema = new Schema(
     //     type: Number
     //   // },
     // },
-    TaxpayerSSN: {
+    taxpayerSSN: {
       type: Number,
     },
     taxpayerDOB: {

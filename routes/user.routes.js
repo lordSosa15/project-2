@@ -4,6 +4,7 @@ const express = require("express")
 const router = express.Router()
 const { isLoggedIn, isLoggedOut } = require("../config/route-guard.config")
 
+const cloudinary = require("../config/cloudinary.config")
 // all routes here
 
 router.get("/personal-info/:id", isLoggedIn, (req, res, next) => {
@@ -38,7 +39,12 @@ router.get("/new-form/:id", isLoggedIn, (req, res, next) => {
     .catch((err) => console.log(err))
 })
 
-router.post("/new-form/:id", isLoggedIn, (req, res, next) => {
+router.post("/new-form/:id", cloudinary.array("taxDocs"), isLoggedIn, (req, res, next) => {
+    
+  let path;
+    if(req.file){
+        path = req.file.path;
+    }
   const {
     referralName,
     UScitizen,
@@ -46,7 +52,7 @@ router.post("/new-form/:id", isLoggedIn, (req, res, next) => {
     firstName,
     lastName,
     occupation,
-    TaxpayerSSN,
+    taxpayerSSN,
     taxpayerDOB,
     driversLicense,
     licenseState,
@@ -65,7 +71,7 @@ router.post("/new-form/:id", isLoggedIn, (req, res, next) => {
     firstName,
     lastName,
     occupation,
-    TaxpayerSSN,
+    taxpayerSSN,
     taxpayerDOB,
     driversLicense,
     licenseState,
@@ -73,7 +79,7 @@ router.post("/new-form/:id", isLoggedIn, (req, res, next) => {
     expDate,
     taxpayerPhoneNumber,
     typeOfIncome,
-    taxDocs,
+    taxDocs: path,
     bankInfo,
   })
     .then((newFormFromDB) => {

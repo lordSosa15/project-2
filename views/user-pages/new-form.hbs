@@ -16,7 +16,7 @@
   {{! must add populate once it's saved and rended /tax-info page }}
   <div class="row">
     <label for="referral">IF referred, type name here</label>
-    <input name="referralName" type="text" />
+    <input name="referralName" type="text" value="{{userInfo.referralName}}"/>
   </div>
   {{! <div class="row requiredRow">
 	<fieldset>
@@ -28,9 +28,9 @@
   <div class="row requiredRow">
     <fieldset>
       <legend>Are you a US citizen? </legend>
-      <span><input value="Yes" name="UScitizen" type="radio" class="required" />
+      <span><input value="{{userInfo.UScitizen}}" name="UScitizen" type="radio" class="required" />
         <label>Yes</label></span>
-      <span><input value="No" name="UScitizen" type="radio" class="required" />
+      <span><input value="{{userInfo.UScitizen}}" name="UScitizen" type="radio" class="required" />
         <label>No</label></span>
     </fieldset>
   </div>
@@ -40,6 +40,7 @@
       name="taxpayerFilingStatus"
       class="btn btn-info dropdown-toggle"
       title="Taxpayer Filing Status"
+      value="{{userInfo.licenseState}}"
     >
       <option value="single">single</option>
       <option value="married filling jointly">married filling jointly</option>
@@ -110,9 +111,10 @@
   <legend>Social Security Number</legend>
   <input
     id="TaxpayerSSNrequired"
-    name="TaxpayerSSN"
+    name="taxpayerSSN"
     type="text"
     title="TaxpayerSSN required. This is a required field"
+    value="{{userInfo.taxpayerSSN}}"  
   />
   <div class="row requiredRow">
     <label for="DOB">Date of birth</label>
@@ -132,6 +134,7 @@
       type="text"
       class="required"
       title="DL # . This is a required field"
+      value="{{userInfo.driversLicense}}"
     />
   </div>
   <div class="row requiredRow">
@@ -141,6 +144,7 @@
       name="licenseState"
       class="required"
       title="state. This is a required field"
+      value="{{userInfo.licenseState}}"
     >
       <option value="Alabama">Alabama</option>
       <option value="Alaska">Alaska</option>
@@ -206,11 +210,11 @@
   </div>
   <div class="row requiredRow">
     <label for="expDate">Expiration date</label>
-    <input id="expDate" name="expDate" type="date" class="required" />
+    <input id="expDate" name="expDate" type="date" class="required" value="{{userInfo.expDate}}"/>
   </div>
   <div class="row requiredRow">
     <label for="phone#">Phone number</label>
-    <input id="phone#" name="taxpayerPhoneNumber" type="tel" class="required" />
+    <input id="phone#" name="taxpayerPhoneNumber" type="tel" class="required" value="{{userInfo.taxpayerPhoneNumber}}"/>
   </div>
   {{! <div class="row">
     <label for="SpouseName">Spouse Name</label>
@@ -374,7 +378,7 @@
 </div> }}
   <div class="row requiredRow">
     <legend>upload income documents</legend>
-    <input class="btn btn-outline-info" type="file" name="taxDocs" />
+    <input class="btn btn-outline-info" type="file" name="taxDocs" value="{{userInfo.taxDocs}}"/>
   </div>
   {{! <div class="row requiredRow">
 	<fieldset>
@@ -386,14 +390,14 @@
   <div class="row requiredRow">
     <legend for="bankInfo">bank account and routing number you want refund
       deposited into</legend>
-    <input type="textbox" />
+    <input type="textbox" value="{{userInfo.bankInfo}}"/>
   </div>
   {{! <div class="row requiredRow">
 	<legend for="itemizeddeductions">Itemized deductions</legend>
 	<input class="btn btn-outline-info" type="file" name="itemizedDeductions">
 </div> }}
   <div class="row">
-    <input type="submit" value="Submit form" />
+    <input type="submit" value="Submit-form" />
   </div>
 </form>
 
