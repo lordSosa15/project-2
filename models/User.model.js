@@ -35,9 +35,6 @@ const userSchema = new Schema(
       type: String,
       format: Date,
     },
-    address: {
-      type: String,
-    },
     forms: [
       {
         type: Schema.Types.ObjectId,

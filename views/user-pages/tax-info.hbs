@@ -1,2 +1,66 @@
 <h2> Form Details </h2>
 
+referred by:
+{{formInfo.referralName}}
+<br />
+citizen:
+{{formInfo.UScitizen}}
+<br />
+taxpayerFilingStatus:
+{{formInfo.taxpayerFilingStatus}}
+<br />
+firstName:
+{{formInfo.firstName}}
+<br />
+lastName:
+{{formInfo.lastName}}
+<br />
+occupation:
+{{formInfo.occupation}}
+<br />
+taxpayerSSN:
+{{formInfo.taxpayerSSN}}
+<br />
+taxpayerDOB:
+{{formInfo.taxpayerDOB}}
+<br />
+driversLicense:
+{{formInfo.driversLicense}}
+<br />
+licenseState:
+{{formInfo.licenseState}}
+<br />
+issuedDate:
+{{formInfo.issuedDate}}
+<br />
+expDate:
+{{formInfo.expDate}}
+<br />
+taxpayerPhoneNumber:
+{{formInfo.taxpayerPhoneNumber}}
+<br />
+typeOfIncome:
+{{formInfo.typeOfIncome}}
+<br />
+taxDocs:
+{{taxDocs}}
+<br />
+<img src="{{formInfo.taxDocs}}" />
+<br />
+<form
+  action="/user-pages/change-taxDocs"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  <input type="file" name="taxDocs" />
+  <br />
+  <button> re-upload tax documents </button>
+</form>
+
+<br />
+bankInfo
+{{bankInfo}}
+
+<br />
+
+<button class="btn btn-outline-primary" onclick="history.back()">Go Back</button>

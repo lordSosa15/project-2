@@ -5,19 +5,19 @@
 
   {{#if_eq userInSession.userType "admin"}}
 
-    <button>
+    <button class="btn btn-outline-primary">
       <a href="/personal-info/{{userInSession._id}}">
         Personal Info
       </a>
     </button>
 
-    <button>
+    <button class="btn btn-outline-primary">
       <a href="/roles">
         Manage and assign roles
       </a>
     </button>
 
-    <button>
+    <button class="btn btn-outline-primary">
       <a href="/users-list">
         List of Users
       </a>
@@ -25,13 +25,13 @@
   {{/if_eq}}
 
   {{#if_eq userInSession.userType "preparer"}}
-    <button>
+    <button class="btn btn-outline-primary">
       <a href="/personal-info/{{userInSession._id}}">
         Personal Info
       </a>
     </button>
 
-    <button>
+    <button class="btn btn-outline-primary">
       <a href="/users-list">
         List of Users
       </a>
@@ -40,7 +40,7 @@
   {{/if_eq}}
 
   {{#if_eq userInSession.userType "user"}}
-    <button>
+    <button class="btn btn-outline-primary">
       <a href="/personal-info/{{userInSession._id}}">
         Personal Info
       </a>
@@ -48,7 +48,7 @@
 
     {{#if userInSession.forms}}
       
- <button>
+ <button class="btn btn-outline-primary">
         <a href="/tax-info/{{#index_of userInSession.forms 0}}{{/index_of}}">
           Form Details
         </a>
@@ -57,7 +57,7 @@
 
     {{/if}}
 
-    <button>
+    <button class="btn btn-outline-primary">
       <a href="/new-form/{{userInSession._id}}">
         New Form
       </a>
