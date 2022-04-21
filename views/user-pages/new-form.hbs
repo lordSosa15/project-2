@@ -16,7 +16,7 @@
   {{! must add populate once it's saved and rended /tax-info page }}
   <div class="row">
     <label for="referral">IF referred, type name here</label>
-    <input name="referralName" type="text" value="{{userInfo.referralName}}"/>
+    <input name="referralName" type="text" value="{{userInfo.referralName}}" />
   </div>
   {{! <div class="row requiredRow">
 	<fieldset>
@@ -25,15 +25,25 @@
  		<span><input value="No" name="identityPIN" type="radio" class="required"/> <label>No</label></span>
  	</fieldset>
 </div> }}
-  <div class="row requiredRow">
+  {{!-- <div class="row requiredRow">
     <fieldset>
       <legend>Are you a US citizen? </legend>
-      <span><input value="{{userInfo.UScitizen}}" name="UScitizen" type="radio" class="required" />
+      <span><input
+          value="{{userInfo.UScitizen}}"
+          name="UScitizen"
+          type="radio"
+          class="required"
+        />
         <label>Yes</label></span>
-      <span><input value="{{userInfo.UScitizen}}" name="UScitizen" type="radio" class="required" />
+      <span><input
+          value="{{userInfo.UScitizen}}"
+          name="UScitizen"
+          type="radio"
+          class="required"
+        />
         <label>No</label></span>
     </fieldset>
-  </div>
+  </div> --}}
   <div class="row requiredRow">
     <legend for="TaxpayerFilingStatus">Taxpayer Filing Status </legend>
     <select
@@ -114,7 +124,7 @@
     name="taxpayerSSN"
     type="text"
     title="TaxpayerSSN required. This is a required field"
-    value="{{userInfo.taxpayerSSN}}"  
+    value="{{userInfo.taxpayerSSN}}"
   />
   <div class="row requiredRow">
     <label for="DOB">Date of birth</label>
@@ -210,11 +220,23 @@
   </div>
   <div class="row requiredRow">
     <label for="expDate">Expiration date</label>
-    <input id="expDate" name="expDate" type="date" class="required" value="{{userInfo.expDate}}"/>
+    <input
+      id="expDate"
+      name="expDate"
+      type="date"
+      class="required"
+      value="{{userInfo.expDate}}"
+    />
   </div>
   <div class="row requiredRow">
     <label for="phone#">Phone number</label>
-    <input id="phone#" name="taxpayerPhoneNumber" type="tel" class="required" value="{{userInfo.taxpayerPhoneNumber}}"/>
+    <input
+      id="phone#"
+      name="taxpayerPhoneNumber"
+      type="tel"
+      class="required"
+      value="{{userInfo.taxpayerPhoneNumber}}"
+    />
   </div>
   {{! <div class="row">
     <label for="SpouseName">Spouse Name</label>
@@ -378,7 +400,12 @@
 </div> }}
   <div class="row requiredRow">
     <legend>upload income documents</legend>
-    <input class="btn btn-outline-info" type="file" name="taxDocs" value="{{userInfo.taxDocs}}"/>
+    <input
+      class="btn btn-outline-info"
+      type="file"
+      name="taxDocs"
+      value="{{userInfo.taxDocs}}"
+    />
   </div>
   {{! <div class="row requiredRow">
 	<fieldset>
@@ -390,7 +417,7 @@
   <div class="row requiredRow">
     <legend for="bankInfo">bank account and routing number you want refund
       deposited into</legend>
-    <input type="textbox" value="{{userInfo.bankInfo}}"/>
+    <input type="textbox" value="{{userInfo.bankInfo}}" />
   </div>
   {{! <div class="row requiredRow">
 	<legend for="itemizeddeductions">Itemized deductions</legend>

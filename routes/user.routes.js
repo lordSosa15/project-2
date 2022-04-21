@@ -50,7 +50,7 @@ router.post(
     }
     const {
       referralName,
-      UScitizen,
+      // UScitizen,
       taxpayerFilingStatus,
       firstName,
       lastName,
@@ -69,7 +69,7 @@ router.post(
 
     Form.create({
       referralName,
-      UScitizen,
+      // UScitizen,
       taxpayerFilingStatus,
       firstName,
       lastName,
