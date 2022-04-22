@@ -41,7 +41,7 @@ router.get("/new-form/:id", isLoggedIn, (req, res, next) => {
 
 router.post(
   "/new-form/:id",
-  cloudinary.array("taxDocs"),
+  cloudinary.single("taxDocs"),
   isLoggedIn,
   (req, res, next) => {
     let path
@@ -106,5 +106,22 @@ router.get("/tax-info/:id", isLoggedIn, (req, res, next) => {
     })
     .catch((err) => console.log(err))
 })
+
+// router.post("/user-pages/upload", cloudinary.single("taxDocs"), (req, res, next) => {
+
+//   User.findByIdAndUpdate(req.session.currentUser._id, { taxDocs: req.file.path }, { new: true })
+//   .then(updatedUser => {
+
+//       // to make sure the most updated changes are saved in the logged in user object
+//       // we are saving updated user in the session
+//       req.session.currentUser = updatedUser;
+//       res.redirect("/tax-info/:id")
+//   })
+//   .catch(err => {
+//       console.log(err);
+//       next(err);
+//   })
+  
+// })
 
 module.exports = router

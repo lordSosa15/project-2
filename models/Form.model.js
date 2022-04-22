@@ -11,7 +11,7 @@ const formSchema = new Schema(
     // },
     UScitizen: {
       type: String,
-      //   required: [true, "email is required."],
+      //   required: [true, "citizenship is required."],
     },
     taxpayerFilingStatus: {
       type: String,
@@ -128,6 +128,7 @@ const formSchema = new Schema(
     // },
     taxDocs: {
       type: String, // was File but i kept getting error so i changed it
+      default: "https://smallbiztrends.com/ezoimgfmt/media.smallbiztrends.com/2021/11/w2-form-850x476.png?ezimgfmt=ng%3Awebp%2Fngcb12%2Frs%3Adevice%2Frscb12-1"
     },
     // auditProtection: {
     //   type: Boolean,
