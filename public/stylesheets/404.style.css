@@ -10,12 +10,16 @@ body {
   box-sizing: border-box;
 }
 
+html {
+  display: block;
+}
+
 .box {
   width: 350px;
   height: 100%;
   max-height: 600px;
   min-height: 450px;
-  background: #fcdc60;
+  background: #ffde40;
   border-radius: 20px;
   position: absolute;
   left: 50%;
@@ -157,7 +161,7 @@ body {
 .box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-left {
   width: 12px;
   height: 12px;
-  background: #fcdc60;
+  background: #ffde40;
   border-radius: 50%;
   margin: 0 10px;
   position: absolute;
@@ -166,7 +170,7 @@ body {
 .box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-right {
   width: 12px;
   height: 12px;
-  background: #fcdc60;
+  background: #ffde40;
   border-radius: 50%;
   margin: 0 10px;
   position: absolute;
@@ -190,7 +194,7 @@ body {
 .box .box__ghost .box__ghost-container .box__ghost-bottom div:nth-child(2n) {
   top: -12px;
   margin: 0 0px;
-  border-top: 15px solid #fcdc60;
+  border-top: 15px solid #ffde40;
   background: transparent;
 }
 .box .box__ghost .box__ghost-shadow {

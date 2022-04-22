@@ -21,8 +21,8 @@ hbs.registerHelper("if_eq", function (a, b, opts) {
   }
 })
 
-hbs.registerHelper("index_of", function (context, ndx) {
-  return context[ndx]
+hbs.registerHelper("index_of", function (context) {
+  return context[context.length - 1]
 })
 
 const app = express()

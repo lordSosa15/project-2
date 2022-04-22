@@ -9,16 +9,16 @@ const formSchema = new Schema(
     //   type: Number,
     //   required: [true, "username is required."],
     // },
-    UScitizen: {
-      type: String,
-      //   required: [true, "email is required."],
-    },
+    // UScitizen: {
+    //   type: String,
+    //   //   required: [true, "email is required."],
+    // },
     taxpayerFilingStatus: {
       type: String,
       enum: [
         "single",
         "married filling jointly",
-        'married filling separately"',
+        "married filling separately",
         "head of household",
         "qualifying widow",
       ],

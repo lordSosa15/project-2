@@ -102,6 +102,7 @@ router.post(
 router.get("/tax-info/:id", isLoggedIn, (req, res, next) => {
   Form.findById(req.params.id)
     .then((formInfo) => {
+      console.log(formInfo)
       res.render("user-pages/tax-info", { formInfo })
     })
     .catch((err) => console.log(err))
