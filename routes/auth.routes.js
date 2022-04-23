@@ -19,9 +19,9 @@ router.post("/auth/signup", (req, res, next) => {
 
   const saltRounds = 10
 
-  const { firstName, lastName, username, email, password } = req.body
+  const { firstName, lastName, email, password } = req.body
 
-  if (!firstName || !lastName || !username || !email || !password) {
+  if (!firstName || !lastName || !email || !password) {
     res.render("auth/signup", {
       errorMessage:
         " all fields are mandatory, please provide your username , email and password",
@@ -48,7 +48,6 @@ router.post("/auth/signup", (req, res, next) => {
       return User.create({
         firstName,
         lastName,
-        username,
         email,
         passwordHash: hashedPassword,
       })
@@ -66,7 +65,7 @@ router.post("/auth/signup", (req, res, next) => {
       } else if (err.code === 11000) {
         res.status(500).render("auth/signup", {
           errorMessage:
-            "username and email need to be unique. Either username or email is already in use",
+            "email is already in use",
         })
       } else {
         console.log("error: ", err.message)

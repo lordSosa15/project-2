@@ -7,12 +7,12 @@ const userSchema = new Schema(
       enum: ["user", "preparer", "admin"],
       default: "user",
     },
-    username: {
-      type: String,
-      // unique: true,
-      trim: true,
-      required: [true, "username is required."],
-    },
+    // username: {
+    //   type: String,
+    //   // unique: true,
+    //   trim: true,
+    //   required: [true, "username is required."],
+    // },
     email: {
       type: String,
       // unique: true,
