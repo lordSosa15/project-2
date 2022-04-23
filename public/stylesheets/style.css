@@ -68,7 +68,8 @@ div {
 
 .headingLandingPage {
   margin-right: 5rem;
-  color: black;
+  color: white;
+  text-shadow: 2px 2px 8px rgb(0 0 0 / 70%), 0 0 2px rgb(0 0 0 / 70%);
 }
 
 .heading_name_LandingPage {
@@ -83,6 +84,31 @@ div {
   box-shadow: 0 -5px 5px -5px #333;
   align-items: center;
   justify-content: center;
+}
+
+.feature_LandingPage {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-right: 1px solid #fff;
+}
+
+.feature_LandingPage:nth-child(3) {
+  border: none;
+}
+
+.feature_LandingPage h2 {
+  font-size: 30px;
+  margin-bottom: 2rem;
+}
+
+.feature_LandingPage p {
+  font-size: 15px;
 }
 
 /* .form-signin {
