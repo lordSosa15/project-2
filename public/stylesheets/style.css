@@ -1,28 +1,55 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
-body {
-  padding: 50px;
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
-  font-family: "Ubuntu";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", "Poppins", sans-serif;
+}
 
-  position: relative;
+body,
+html {
+  height: 100%;
+  line-height: 1.5;
+}
+
+body {
+  display: block;
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-image: url(/images/bg-image.jpeg);
+
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-family: "Ubuntu";
+  font-size: 1rem;
+  font-weight: 300;
+  color: #212529;
+
+  /* position: relative;
   box-sizing: border-box;
   min-height: 100vh;
   overflow-x: hidden;
-
   max-width: 1536px;
-  margin: 0 auto;
   float: none;
-
-  background-color: white;
-}
-
-a {
-  color: #00b7ff;
+  background: #ecf0f3; */
 }
 
 h1 {
   color: 15px;
+}
+
+div {
+  display: block;
+}
+
+.imageLandingPage {
+  height: 100%;
+  vertical-align: middle;
+  border-style: none;
 }
 
 /* .form-signin {
@@ -56,17 +83,6 @@ h1 {
 } */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background: #ecf0f3;
-}
 
 .wrapper {
   max-width: 350px;
@@ -154,33 +170,32 @@ body {
   }
 }
 
-
 /* sign up CSS */
-.form-container{
+.form-container {
   background-color: #fff;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   font-size: 0;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3);
 }
-.form-container .title{
+.form-container .title {
   color: #000;
   font-size: 25px;
   font-weight: 600;
   text-transform: capitalize;
   margin: 0 0 25px;
 }
-.form-container .title:after{
-  content: '';
-  background-color: #00A9EF;
+.form-container .title:after {
+  content: "";
+  background-color: #00a9ef;
   height: 3px;
   width: 60px;
   margin: 10px 0 0;
   display: block;
   clear: both;
 }
-.form-container .sub-title{
+.form-container .sub-title {
   color: #333;
   font-size: 18px;
   font-weight: 600;
@@ -188,20 +203,24 @@ body {
   text-transform: uppercase;
   margin: 0 0 20px;
 }
-.form-container .form-horizontal{ font-size: 0; }
-.form-container .form-horizontal .form-group{
+.form-container .form-horizontal {
+  font-size: 0;
+}
+.form-container .form-horizontal .form-group {
   color: #333;
   width: 50%;
   padding: 0 8px;
   margin: 0 0 15px;
   display: inline-block;
 }
-.form-container .form-horizontal .form-group:nth-child(4){ margin-bottom: 30px; }
-.form-container .form-horizontal .form-group label{
+.form-container .form-horizontal .form-group:nth-child(4) {
+  margin-bottom: 30px;
+}
+.form-container .form-horizontal .form-group label {
   font-size: 17px;
   font-weight: 600;
 }
-.form-container .form-horizontal .form-control{
+.form-container .form-horizontal .form-control {
   color: #888;
   background: #fff;
   font-weight: 400;
@@ -212,12 +231,14 @@ body {
   border: 2px solid #e7e7e7;
   box-shadow: none;
 }
-.form-container .form-horizontal .form-control:focus{ box-shadow: 0 0 5px #dcdcdc; }
-.form-container .form-horizontal .check-terms{
+.form-container .form-horizontal .form-control:focus {
+  box-shadow: 0 0 5px #dcdcdc;
+}
+.form-container .form-horizontal .check-terms {
   padding: 0 8px;
   margin: 0 0 25px;
 }
-.form-container .form-horizontal .check-terms .check-label{
+.form-container .form-horizontal .check-terms .check-label {
   color: #333;
   font-size: 14px;
   font-weight: 500;
@@ -225,7 +246,7 @@ body {
   vertical-align: top;
   display: inline-block;
 }
-.form-container .form-horizontal .check-terms .checkbox{
+.form-container .form-horizontal .check-terms .checkbox {
   height: 17px;
   width: 17px;
   min-height: auto;
@@ -240,22 +261,28 @@ body {
   -webkit-appearance: none;
   transition: all 0.3s ease 0s;
 }
-.form-container .form-horizontal .check-terms .checkbox:before{
-  content: '';
+.form-container .form-horizontal .check-terms .checkbox:before {
+  content: "";
   height: 5px;
   width: 9px;
-  border-bottom: 2px solid #00A9EF;
-  border-left: 2px solid #00A9EF;
+  border-bottom: 2px solid #00a9ef;
+  border-left: 2px solid #00a9ef;
   transform: rotate(-45deg);
   position: absolute;
   left: 2px;
   top: 2.5px;
   transition: all 0.3s ease;
 }
-.form-container .form-horizontal .check-terms .checkbox:checked:before{ opacity: 1; }
-.form-container .form-horizontal .check-terms .checkbox:not(:checked):before{ opacity: 0; }
-.form-container .form-horizontal .check-terms .checkbox:focus{ outline: none; }
-.form-container .signin-link{
+.form-container .form-horizontal .check-terms .checkbox:checked:before {
+  opacity: 1;
+}
+.form-container .form-horizontal .check-terms .checkbox:not(:checked):before {
+  opacity: 0;
+}
+.form-container .form-horizontal .check-terms .checkbox:focus {
+  outline: none;
+}
+.form-container .signin-link {
   color: #333;
   font-size: 14px;
   width: calc(100% - 190px);
@@ -263,15 +290,17 @@ body {
   display: inline-block;
   vertical-align: top;
 }
-.form-container .signin-link a{
-  color: #00A9EF;
+.form-container .signin-link a {
+  color: #00a9ef;
   font-weight: 600;
   transition: all 0.3s ease 0s;
 }
-.form-container .signin-link a:hover{ text-decoration: underline; }
-.form-container .form-horizontal .signup{
+.form-container .signin-link a:hover {
+  text-decoration: underline;
+}
+.form-container .form-horizontal .signup {
   color: #fff;
-  background: #00A9EF;
+  background: #00a9ef;
   font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
@@ -282,27 +311,27 @@ body {
   transition: all 0.3s ease 0s;
 }
 .form-container .form-horizontal .btn:hover,
-.form-container .form-horizontal .btn:focus{
-  text-shadow: 0 0 5px rgba(0,0,0,0.5);
-  box-shadow: 3px 3px rgba(0,0,0,0.15),5px 5px rgba(0,0,0,0.1);
+.form-container .form-horizontal .btn:focus {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.15), 5px 5px rgba(0, 0, 0, 0.1);
   outline: none;
 }
-@media only screen and (max-width:479px){
-  .form-container .form-horizontal .form-group{ width: 100%; }
-  .form-container .signin-link{
-      width: 100%;
-      margin: 0 10px 15px;
+@media only screen and (max-width: 479px) {
+  .form-container .form-horizontal .form-group {
+    width: 100%;
+  }
+  .form-container .signin-link {
+    width: 100%;
+    margin: 0 10px 15px;
   }
 }
-
-
 
 /* Testimonials  */
 /* Icon set - http://ionicons.com/ */
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
 figure.snip1139 {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: "Raleway", Arial, sans-serif;
   position: relative;
   overflow: hidden;
   margin: 10px;
@@ -337,7 +366,7 @@ figure.snip1139 blockquote {
 }
 figure.snip1139 blockquote:before,
 figure.snip1139 blockquote:after {
-  font-family: 'FontAwesome';
+  font-family: "FontAwesome";
   content: "\201C";
   position: absolute;
   font-size: 50px;

@@ -4,6 +4,8 @@ html,
 body {
   background: #fff;
   font-family: "Ubuntu";
+  height: 100%;
+  line-height: 1.8;
 }
 
 * {
