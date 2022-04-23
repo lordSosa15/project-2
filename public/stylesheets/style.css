@@ -52,6 +52,39 @@ div {
   border-style: none;
 }
 
+.navbar {
+  background: rgba(0, 0, 0, 0.1);
+  font-weight: 300;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.centerLandingPage {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20%;
+}
+
+.headingLandingPage {
+  margin-right: 5rem;
+  color: black;
+}
+
+.heading_name_LandingPage {
+  font-weight: 400;
+}
+
+.bottomLandingPage {
+  display: flex;
+  height: 30vh;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -5px 5px -5px #333;
+  align-items: center;
+  justify-content: center;
+}
+
 /* .form-signin {
   width: 100%;
   max-width: 330px;
@@ -412,10 +445,6 @@ figure.snip1139 .author h5 span {
   text-transform: none;
   padding-left: 5px;
 }
-<<<<<<< Updated upstream
-=======
-
-
 
 /* profile */
 .card {
@@ -423,41 +452,40 @@ figure.snip1139 .author h5 span {
   background-color: #efefef;
   border: none;
   cursor: pointer;
-  transition: all 0.5s
+  transition: all 0.5s;
 }
 
 .image img {
-  transition: all 0.5s
+  transition: all 0.5s;
 }
 
 .card:hover .image img {
-  transform: scale(1.5)
+  transform: scale(1.5);
 }
-
 
 .name {
   font-size: 22px;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .idd {
   font-size: 14px;
-  font-weight: 600
+  font-weight: 600;
 }
 
 .idd1 {
-  font-size: 12px
+  font-size: 12px;
 }
 
 .number {
   font-size: 22px;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .follow {
   font-size: 12px;
   font-weight: 500;
-  color: #444444
+  color: #444444;
 }
 
 .btn1 {
@@ -466,26 +494,25 @@ figure.snip1139 .author h5 span {
   border: none;
   background-color: #000;
   color: #aeaeae;
-  font-size: 15px
+  font-size: 15px;
 }
 
 .text span {
   font-size: 13px;
   color: #545454;
-  font-weight: 500
+  font-weight: 500;
 }
 
 .icons i {
-  font-size: 19px
+  font-size: 19px;
 }
 
 hr .new1 {
-  border: 1px solid
+  border: 1px solid;
 }
 
 .join {
   font-size: 14px;
   color: #a0a0a0;
-  font-weight: bold
+  font-weight: bold;
 }
->>>>>>> Stashed change
