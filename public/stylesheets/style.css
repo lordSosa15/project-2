@@ -66,12 +66,12 @@ div {
   padding-left: 20%;
 }
 
-.row {
+/* .row {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 100px;
-}
+} */
 
 .headingLandingPage {
   margin-right: 5rem;
