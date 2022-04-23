@@ -87,6 +87,7 @@ div {
 }
 
 .feature_LandingPage {
+  overflow: hidden;
   height: 80%;
   width: 100%;
   display: flex;
